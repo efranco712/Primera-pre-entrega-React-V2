@@ -1,5 +1,7 @@
 import Logoadidas from "./images/logo-adidas.svg";
 import Adidas from "./images/Adidas.svg";
+import Cartwidget from './components/Cartwidget';
+import NavBar from './components/Navbar';
 
 
 
