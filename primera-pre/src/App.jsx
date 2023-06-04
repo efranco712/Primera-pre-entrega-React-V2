@@ -7,7 +7,7 @@ import Carrousel from './components/Carrousel';
 
 function App() {
   return (
-    <div className="container-fluid">
+    <div>
       <Header />
       <Banner />
       <Carrousel />
