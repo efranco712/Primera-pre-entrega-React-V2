@@ -3,12 +3,14 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import ItemListContainer from './components/ItemListContainer';
 import Banner from './components/Banner';
+import Carrousel from './components/Carrousel';
 
 function App() {
   return (
     <div className="container-fluid">
       <Header />
       <Banner />
+      <Carrousel />
       <ItemListContainer greeting={"No hay productos"} />
       <Footer />
     </div>
