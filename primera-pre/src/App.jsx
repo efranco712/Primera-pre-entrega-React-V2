@@ -4,14 +4,23 @@ import Header from './components/Header';
 import ItemListContainer from './components/ItemListContainer';
 import Banner from './components/Banner';
 import Carrousel from './components/Carrousel';
+import {  BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
   return (
     <div>
       <Header />
       <Banner />
+      <Routes>
+        <Route path={"/"} element={<ItemListContainer />} />
+        <Route path={"/category/:id"} element={<ItemListContainer />} /> 
+        <Route path={"/item/:id"} element={<ItemDetailContainer />} /> 
+        <Route path={"/destacados"} element={<Destacados />} /> 
+        <Route path={"/*"} element={<Error404 />} /> 
+      </Routes>
       <Carrousel />
-      <ItemListContainer greeting={"No hay productos"} />
+      <ItemListContainer />
+      <ItemDetail />
       <Footer />
     </div>
   );

@@ -4,7 +4,8 @@ const Banner = () => {
             <div className="row">
                 <div className="col text-center">
                     <img src={"./images/banner.svg"} alt="banner" className="img-fluid" />
-                    <h2 className="my-3">PREPARATE PARA EL TORNEO</h2>
+                    <h2 className="my-3">PREPARATE PARA EL INVIERNO</h2>
+                    <a href="/" className="btn btn-dark">Comprar</a>
 
                 </div>
             </div>

@@ -1,0 +1,13 @@
+[
+    {"idx":1, "titulos":"Zapatillas Forum Exhibit Low", "descripción": "Hombre zapatillas", "imagen":"https://www.adidas.pe/zapatillas-forum-exhibit-low/HQ7111.html", "precio":"S/.429", "categoria":"hombre"},
+    {"idx":2, "titulos":"Zapatillas Gazelle 85", "descripción": "Hombre zapatillas", "imagen":"https://www.adidas.pe/zapatillas-gazelle-85/ID2019.html", "precio":"S/.499", "categoria":"hombre", "stock":"30"},
+    {"idx":3, "titulos":"Duramo RC Shoes", "descripción": "Hombre zapatillas", "imagen":"https://www.adidas.pe/duramo-rc-shoes/ID2704.html", "precio":"S/.209", "categoria":"hombre", "stock":"34"},
+    {"idx":4, "titulos":"Zapatillas Campus 00s", "descripción": "Mujer zapatillas", "imagen":"https://www.adidas.pe/zapatillas-campus-00s/HP6396.html", "precio":"S/.429", "categoria":"mujer", "stock":"13"},
+    {"idx":5, "titulos":"Zapatillas Superstar veganas", "descripción": "Mujer zapatillas", "imagen":"https://www.adidas.pe/zapatillas-superstar-veganas/HQ6668.html", "precio":"S/.329", "categoria":"mujer", "stock":"24"},
+    {"idx":6, "titulos":"Zapatillas Asti Her Vegan", "descripción": "Mujer zapatillas", "imagen":"https://www.adidas.pe/zapatillas-astir-her-vegan/HQ6670.html", "precio":"S/.449", "categoria":"mujer", "stock":"18"},
+    {"idx":7, "titulos":"Zapatillas Advantage", "descripción": "Niños zapatillas", "imagen":"https://www.adidas.pe/zapatillas-advantage/GZ7629.html", "precio":"S/.89", "categoria":"niños", "stock":"29"},
+    {"idx":8, "titulos":"Zapatillas Campus 00s", "descripción": "Niños zapatillas", "imagen":"https://www.adidas.pe/campus-00s-j/HQ6638.html", "precio":"S/.379", "categoria":"niños", "stock":"27"},
+    {"idx":9, "titulos":"Forum Low", "descripción": "Niños zapatillas", "imagen":"https://www.adidas.pe/zapatillas-forum-low/ID6854.html", "precio":"S/.199", "categoria":"niños", "stock":"17"}
+    
+]
+
