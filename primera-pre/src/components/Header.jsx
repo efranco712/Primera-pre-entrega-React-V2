@@ -2,6 +2,7 @@ import Logoadidas from "./images/logo-adidas.svg";
 import Adidas from "./images/Adidas.svg";
 import CartWidget from './CartWidget';
 import NavBar from './NavBar';
+import {Link} from "react-router-dom";
 
 
 
@@ -10,15 +11,15 @@ const Header = () => {
         <div className="container-fluid">
             <div className="row bg-body-secondary p-3">
                 <div className="col-md-6">
-                    <a href="http://www.w3.org/1999/xlink"> <img src={Logoadidas} alt={"Logo adidas"} width={50} /></a>
+                    <Link to={"http://www.w3.org/1999/xlink"} target={"_blank"} rel={"noreferrer"}> <img src={Logoadidas} alt={"Logo adidas"} width={50} /></Link>
                 </div>
             </div>
             <div className="col-md-6 text-end">
-                <a href="/"className="text-dark text-decoration-none">Buscar Tienda</a> | <a href="#" className="text-dark text-decoration-none">Ayuda</a>
+                <Link to={"/"}className="text-dark text-decoration-none">Buscar Tienda</Link> | <Link to={"#"} className="text-dark text-decoration-none">Ayuda</Link>
             </div>
             <div className="row bg-body-secondary p3">
                 <div className="col-md-4">
-                    <a href="http://www.w3.org/2000/svg"><img src={Adidas} alt={"Adidas antiguo"} width={65}/></a>
+                    <Link to={"http://www.w3.org/2000/svg"}><img src={Adidas} alt={"Adidas antiguo"} width={65}/></Link>
                 </div>
                 <div className="col-md-4 text-center">
                     <NavBar/>

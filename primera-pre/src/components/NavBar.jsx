@@ -1,17 +1,18 @@
+import { NavLink} from "react-router-dom";
 const NavBar = () => {
     return (
         <ul className="nav justify-content-center">
             <li className="nav-item">
-                <a className="nav-link active" href="#">Destacados</a>
+                <NavLink className="nav-link text-dark" activeClassName="text-danger" to={"/destacados"}>Destacados</NavLink>
             </li>
             <li className="nav-item">
-                <a class="nav-link" href="#">Varones</a>
+                <NavLink class="nav-link text-dark" activeClassName="text-danger" to={"/category/hombres"}>Hombres</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Mujeres</a>
+                <NavLink className="nav-link text-dark" activeClassName="text-danger" to={"category/mujer"}>Mujer</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link disabled" href="#">Niños</a>
+                <NavLink className="nav-link text-dark" activeClassName="text-danger" to={"category/niños"}>Niños</NavLink>
             </li>
         </ul>
     )
