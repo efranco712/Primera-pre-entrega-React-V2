@@ -5,7 +5,8 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Banner from './components/Banner';
 import Carrousel from './components/Carrousel';
-import { BrowserRouter, Routes, Route} from "react-router-dom"
+import Error404 from './components/Error404';
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path={"/*"} element={<Error404 />} /> 
         </Routes>
       <Carrousel />
+      <Error404 />
       <ItemListContainer />
       <ItemDetailContainer />
       <Footer />

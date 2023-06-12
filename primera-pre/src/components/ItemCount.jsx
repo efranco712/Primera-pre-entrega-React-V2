@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState} from "react";
 
-const ItemCount = () => {
+const ItemCount = ({stock}) => {
     const[items,setItems] =useState(1);
-    const[itemStock,setItemstcok] =useState(Stock);
+    const[itemStock,setItemStock] =useState(stock);
     
     const incremetarStock = () => {
         if (items < itemStock) {
@@ -18,7 +18,7 @@ const ItemCount = () => {
 
     const onAdd = () => {
         if (items <= itemStock) {
-            setItemsSotck(itemStock - items);
+            setItemStock(itemStock - items);
             setItems(1);
             console.log("Has seleccionado:"  + items + " Productos al carrito!/Te quedam: " + itemStock + "productos disponibles!");
         }

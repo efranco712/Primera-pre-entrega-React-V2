@@ -1,4 +1,4 @@
-import {useEffect } from "react";
+import {useEffect , useState } from "react";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({producto}) => {

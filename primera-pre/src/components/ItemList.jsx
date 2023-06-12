@@ -1,3 +1,5 @@
+import Item from "./Item";
+
 const Itemlist = ({productos}) => {
     
     return (
