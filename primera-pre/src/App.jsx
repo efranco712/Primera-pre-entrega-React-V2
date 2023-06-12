@@ -21,9 +21,6 @@ function App() {
           <Route path={"/*"} element={<Error404 />} /> 
         </Routes>
       <Carrousel />
-      <Error404 />
-      <ItemListContainer />
-      <ItemDetailContainer />
       <Footer />
       </BrowserRouter>
 

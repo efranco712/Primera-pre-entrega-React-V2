@@ -6,7 +6,7 @@ const NavBar = () => {
                 <NavLink className="nav-link text-dark" activeClassName="text-danger" to={"/destacados"}>Destacados</NavLink>
             </li>
             <li className="nav-item">
-                <NavLink class="nav-link text-dark" activeClassName="text-danger" to={"/category/hombres"}>Hombres</NavLink>
+                <NavLink class="nav-link text-dark" activeClassName="text-danger" to={"/category/hombre"}>Hombres</NavLink>
             </li>
             <li className="nav-item">
                 <NavLink className="nav-link text-dark" activeClassName="text-danger" to={"category/mujer"}>Mujer</NavLink>
