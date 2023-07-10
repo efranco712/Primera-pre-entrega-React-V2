@@ -60,9 +60,6 @@ const Cart = () => {
             <div cl></div>
             <h1>Cart</h1>
             <p>Total Producto : {cartTotal()}</p>
-            <ul>
-                {cartTotal.map(items => <li>{items.titulo + "(" + items.cantidad + ")" }</li>)}
-            </ul>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import {CartContext} from "./context/CartContext";
 //import { QueryEndAtConstraint } from "firebase/firestore";
