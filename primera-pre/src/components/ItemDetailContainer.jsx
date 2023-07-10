@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
 useEffect(() => {
 
     const db =getFirestore();
-    const producto = doc(db,"item", id);
+    const producto = doc(db,"items", id);
     getDoc(producto).then(resultado => {
         setItem({id:resultado.id, ...resultado.data()});
         setLoading(false);

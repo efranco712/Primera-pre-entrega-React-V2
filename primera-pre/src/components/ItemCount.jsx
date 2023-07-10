@@ -1,4 +1,4 @@
-import { useEffect, useState} from "react";
+import { useState} from "react";
 import { Link } from "react-router-dom";
 
 const ItemCount = ({stock, onAdd}) => {
@@ -46,7 +46,7 @@ const ItemCount = ({stock, onAdd}) => {
             </div>
             <div className="row">
                 <div className="col">
-                {itemAdded ? <Link to={"/cart"} className="btn btn-light">Finalizar Compra </Link> : <button type="button" className="btn btn-light" onClick={addToCart}>Agregar al carrito</button>}
+                {itemAdded ? <Link to={"/cart"} className="btn btn-light">Finalizar Compra </Link> : <button type="button" className="btn btn-light" onClick={()=> onAdd(items)}>Agregar al carrito</button>}
                 </div>
             </div>
         </div>    
