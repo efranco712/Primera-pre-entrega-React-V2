@@ -1,8 +1,16 @@
-import {useEffect , useState } from "react";
+import {useEffect , useState, useContext } from "react";
 import ItemCount from "./ItemCount";
+import {CartContext} from "./context/CartContext";
+//import { QueryEndAtConstraint } from "firebase/firestore";
 
 const ItemDetail = ({producto}) => {
+    const {addItem} = useContext (CartContext);
     const [item, setItem] = useState({});
+
+    const onAdd = (quantity) => {
+        addItem(item, quantity);
+    }
+
     useEffect (() => {
         setItem(producto);
     }, [producto]);
@@ -17,7 +25,7 @@ const ItemDetail = ({producto}) => {
                     <h1>{producto.titulo}</h1>
                     <h3>{producto.descripcion}</h3>
                     <p><b>${producto.precio}</b></p>
-                    <ItemCount stock={producto.stock} />
+                    <ItemCount stock={producto.stock} onAdd={onAdd} />
 
                 </div>
             </div>
