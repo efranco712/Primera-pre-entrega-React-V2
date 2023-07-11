@@ -1,4 +1,4 @@
-import {  useState, useContext } from "react";
+import { useEffect,useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import {CartContext} from "./context/CartContext";
 //import { QueryEndAtConstraint } from "firebase/firestore";
@@ -11,9 +11,11 @@ const ItemDetail = ({producto}) => {
         addItem(item, quantity);
     }
 
+  //corrección coder ask
     useEffect (() => {
         setItem(producto);
-    }, [producto]);
+    }, [producto]); 
+
 
     return (
         <div className="container">

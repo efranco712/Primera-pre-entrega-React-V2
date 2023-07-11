@@ -4,7 +4,7 @@ import {useParams} from "react-router-dom";
 import Itemlist from "./ItemList";
 // import { getFirestore, doc, getDoc } from "firebase/firestore";
 //import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { getFirestore, collection, getDocs, where, query, limit } from "firebase/firestore";
+import { getFirestore, collection, getDocs, where, query } from "firebase/firestore";
 import Loading from "./Loading";
 
 const ItemListContainer = () => {
@@ -29,9 +29,10 @@ const ItemListContainer = () => {
 
 useEffect(() => {
     const db = getFirestore();
-    const itemsCollection =collection(db, "items");
-    const q = id ? query(itemsCollection, where("categoria", "==", id), limit(1)) : itemsCollection;
+    const itemsCollection = collection(db, "items");
+    const q = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection;
     getDocs(q).then(resultado => {
+        console.log(resultado);
         if (resultado.size > 0) {           
         setItems(resultado.docs.map(producto => ({id:producto.id, ...producto.data()})));
         setLoading(false);

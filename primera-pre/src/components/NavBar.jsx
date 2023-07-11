@@ -1,7 +1,7 @@
 import { NavLink} from "react-router-dom";
 const NavBar = () => {
     return (
-        <ul className="nav justify-content-center">
+        <ul className="nav justify-content-center align-center">
             <li className="nav-item">
                 <NavLink className="nav-link text-dark" activeClassName="text-danger" to={"/destacados"}>Destacados</NavLink>
             </li>

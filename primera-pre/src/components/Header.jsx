@@ -14,8 +14,8 @@ const Header = () => {
                     <Link to={"destacados"} target={"_blank"} rel={"noreferrer"}> <img src={Logoadidas} alt={"Logo adidas"} width={50} /></Link>
                 </div>
             </div>
-            <div className="col-md-6 text-end">
-                <Link to={"/"}className="text-dark text-decoration-none">Buscar Tienda</Link> | <Link to={"#"} className="text-dark text-decoration-none">Ayuda</Link>
+            <div className="col text-end">
+                <Link to={"/"}className="text-dark text-decoration-none text-end">Buscar Tienda</Link> | <Link to={"#"} className="text-dark text-decoration-none">Ayuda</Link>
             </div>
             <div className="row bg-body-secondary p3">
                 <div className="col-md-4">

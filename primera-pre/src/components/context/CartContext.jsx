@@ -29,7 +29,7 @@ const CartContextProvider = ({children}) => {
     };
 
     const isInCart = (id) => {
-        return cart.some(item => item.id === id)
+        return cart.some(product => product.id === id)
     };
 
     const cartTotal = () => {
