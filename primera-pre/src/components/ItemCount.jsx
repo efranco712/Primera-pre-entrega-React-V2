@@ -1,4 +1,4 @@
-import { useEffect, useState} from "react";
+import { useState} from "react";
 import { Link } from "react-router-dom";
 
 const ItemCount = ({stock, onAdd}) => {
@@ -18,7 +18,8 @@ const ItemCount = ({stock, onAdd}) => {
         }
     }
 
-    const addToCart = () => {
+    //correción coder ask
+/*    const addToCart = () => {
         if (items <= itemStock) {
             setItemStock(itemStock - items);
             setItems(1);
@@ -26,7 +27,7 @@ const ItemCount = ({stock, onAdd}) => {
             onAdd(items)
             console.log("Has seleccionado:"  + items + " Productos al carrito!/Te quedam: " + itemStock + "productos disponibles!");
         }
-    }
+    }  */
 
     useEffect(() => {
         setItemStock(stock);
