@@ -1,17 +1,28 @@
 import { useContext, useState } from "react";
 import { CartContext } from "./context/CartContext";
-import { getFirestore, collection, addDoc, updateDoc, doc } from "firebase/firestore";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { Navigate} from "react-router-dom";
 
 const Checkout = () => {
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
     const [orderId, setOrderId] = useState("");
-    const [cart, sumTotal] = useContext(CartContext);
+    const [cart, clear, sumTotal] = useContext(CartContext);
 
     const generarOrden = () => {
+        if (nombre.length === 0) {
+            return false;
+        }
+        if (email.length === 0) {
+            return false;
+        }
+        if (telefono.length === 0) {
+            return false;
+        }
+
         const buyer = { name: nombre, phone: telefono, email: email }
-        const items = cart.map(item => ({ Id: item.id, title: item.title, price: item.price }));
+        const items = cart.map(item => ({ Id: item.id, title: item.title, price: item.price, quantity:item.quantity}));
         const fecha = new Date();
         const date = `${fecha.getFullYear()}-${fecha.getMonth() + 1}- ${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}}`;
         const total = sumTotal();
@@ -22,16 +33,12 @@ const Checkout = () => {
     const db = getFirestore();
         const OrdersCollection = collection(db, "orders");
         addDoc(OrdersCollection, order).then(resultado => {
+            clear();
             setOrderId(resultado.id);
         })
-            .catch(resultado => {
-                console.log("Error! No se pudo completar la compra! ");
-            }); 
-
-        //const db = getFirestore();
-        const orderdoc = doc(db, "orders", orderId);
-        updateDoc(orderdoc,{total:10000});
-
+        .catch(resultado => {
+            console.log("Error! No se pudo completar la compra! ");
+        }); 
 
     }
 
@@ -65,8 +72,8 @@ const Checkout = () => {
                                     <tr>
                                         <td><img src={item.imagen} alt={item.titulo} width={80} /></td>
                                         <td className="align-middle">{item.titulo}</td>
-                                        <td className="align-middle">{item.cantidad} x ${item.precio * item.precio}</td>
-                                        <td className="align-middle text-center">{item.cantidad * item.precio}</td>
+                                        <td className="align-middle">{item.quantity} x ${item.precio * item.precio}</td>
+                                        <td className="align-middle text-center">{item.quantity * item.precio}</td>
                                     </tr>
                                 )
                             }
@@ -80,10 +87,8 @@ const Checkout = () => {
             </div>
             <div className="row my-5">
                 <div className="col text-center">
-                    {orderId ? <div className="alert alert-warning" role="alert">
-                        <h1>Grcias por tu Compra!</h1>
-                        <p>Tu orden de Compra es: <b>{orderId}</b></p>
-                    </div> : ""}
+                    {orderId ? <Navigate to={"/thankyou" + orderId} /> : ""}
+
                 </div>
             </div>
         </div>    

@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 const Item = ({producto}) => {
-    console.log(producto)
+
     return (
         <>
             <div className="col-me-4 my-3">
