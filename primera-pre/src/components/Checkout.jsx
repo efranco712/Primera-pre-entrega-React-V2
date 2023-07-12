@@ -10,7 +10,7 @@ const Checkout = () => {
     const [orderId, setOrderId] = useState("");
     const [cart, clear, sumTotal] = useContext(CartContext);
 
-    const generarOrden = () => {
+    const generarOrden = () =>  {
         if (nombre.length === 0) {
             return false;
         }
@@ -61,7 +61,7 @@ const Checkout = () => {
                             <label className="form-label">Teléfono</label>
                             <input type="text" className="form-control" onInput={(e) => { setTelefono(e.target.value) }} />
                         </div>
-                        <button type="button" className="btn btn-primary">Generar Orden</button>
+                        <button type="button" className="btn btn-primary" onClick={generarOrden}>Generar Orden</button>
                     </form>
                 </div>
                 <div className="col-md-6">
@@ -70,8 +70,8 @@ const Checkout = () => {
                             {
                                 cart.map(item =>
                                     <tr>
-                                        <td><img src={item.imagen} alt={item.titulo} width={80} /></td>
-                                        <td className="align-middle">{item.titulo}</td>
+                                        <td><img src={item.imagen} alt={item.nombre} width={80} /></td>
+                                        <td className="align-middle">{item.nombre}</td>
                                         <td className="align-middle">{item.quantity} x ${item.precio * item.precio}</td>
                                         <td className="align-middle text-center">{item.quantity * item.precio}</td>
                                     </tr>

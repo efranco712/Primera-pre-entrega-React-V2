@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 
 const ItemCount = ({stock, onAdd}) => {
-    const[items,setItems] =useState(1);
-    const[itemStock,setItemStock] =useState(stock);
+    const[items,setItems] =useState(0);
+    const[itemStock,setItemStock] = useState(stock);
     const[itemAdded, setItemAdded] = useState(false);
     
     const incremetarStock = () => {
@@ -41,7 +41,7 @@ useEffect(() => {
                 <div className="col">
                     <div className="btn-grupo" role="group" aria-label="Basic example">
                         <button type="button" className="btn btn-ligh" onClick={decrementarStock}>-</button>
-                        <button type="button" className="btn btn-light"></button>
+                        <button type="button" className="btn btn-light">{items}</button>
                         <button type="button" className="btn btn-light"onClick={addToCart}>+</button>
                     </div>
                 </div>

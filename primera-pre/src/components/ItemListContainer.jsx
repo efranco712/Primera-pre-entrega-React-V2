@@ -22,7 +22,7 @@ useEffect(() => {
         setItems(resultado.docs.map(producto => ({id:producto.id, ...producto.data()})));
         setLoading(false);
         } else {
-            console.error("Error! No se encontraon productos en la selección!");
+            console.error("Error! No se encontraron productos en la selección!");
         }
     });
 }, [id]); 
