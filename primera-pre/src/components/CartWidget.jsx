@@ -9,7 +9,7 @@ const CartWidget = () => {
     return (
         (cartTotal() > 0) ? <Link className="btn btn-light position-relative" to={"/cart"}>
             <img src={bag} alt="Carrito" width={24} />
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{cartTotal()}1</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{cartTotal()}</span>
         </Link> : ""
     )
 }

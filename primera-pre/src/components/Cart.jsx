@@ -12,7 +12,7 @@ const Cart = () => {
             <div className="container my-5">
                 <div className="row">
                     <div className="col text-center">
-                        <div className="aler alert-danger" role="alert"> No se encontraron productos en el Carrito</div>
+                        <div className="alert alert-danger" role="alert"> No se encontraron productos en el Carrito</div>
                     </div>
                 </div>
             </div>
@@ -33,23 +33,23 @@ const Cart = () => {
                         <tbody>
                             <tr>
                                 <td colSpan={4}>&nbsp;</td>
-                                <td className="text-end"><button className="bttn btn-light" onClick={() => {clear()}}
+                                <td className="text-end"><button className="btn btn-light" onClick={() => {clear()}}
                                         title="Vaciar Carrito">Vaciar Carrito</button></td>
                                 <td>&nbsp;</td>
                             </tr>
-                                {
-                                    cart.map(item => 
-                                        <tr>
-                                            <td><img src={item.imagen} alt={item.nombre} width={80} /></td>
-                                            <td className="align-middle">{item.nombre}</td>
-                                            <td className="align-middle">{item.quantity} x ${item.precio}</td>
-                                            <td className="align-middle text-center">{item.quantity * item.precio}</td>
-                                            <td className="align-middle text-end"><button className="bttn btn-light" onClick={() => {removeItem(item.id)}}
-                                            title="Eliminar producto"><img src={trash} alt="Eliminr Producto" width={24} />
-                                            </button></td>
-                                        </tr> 
-                                    )
-                                }
+                            {
+                                cart.map(item => (
+                                    <tr key={item.id}>
+                                        <td><img src={item.imagen} alt={item.nombre} width={80} /></td>
+                                        <td className="align-middle">{item.nombre}</td>
+                                        <td className="align-middle">{item.quantity} x ${item.precio}</td>
+                                        <td className="align-middle text-center">${item.quantity * item.precio}</td>
+                                        <td className="align-middle text-end"><button className="btn btn-light" onClick={() => {removeItem(item.id)}}
+                                        title="Eliminar producto"><img src={trash} alt="Eliminr Producto" width={24} />
+                                        </button></td>
+                                    </tr> 
+                                ))
+                            }
                             <tr>
                                 <td colSpan={3} className="align-middle text-end">Total a pagar</td>
                                 <td className="align-middle text-center">${sumTotal()}</td>

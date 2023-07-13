@@ -31,11 +31,11 @@ const Checkout = () => {
 
         //insertar un Documento en Firestore
 
-    const db = getFirestore();
+        const db = getFirestore();
         const OrdersCollection = collection(db, "orders");
         addDoc(OrdersCollection, order).then(resultado => {
-            clear();
             setOrderId(resultado.id);
+            clear();
         })
         .catch(resultado => {
             console.log("Error! No se pudo completar la compra! ");
@@ -70,11 +70,11 @@ const Checkout = () => {
                         <tbody>
                             {
                                 cart.map(item =>
-                                    <tr>
+                                    <tr key={item.id}>
                                         <td><img src={item.imagen} alt={item.nombre} width={80} /></td>
                                         <td className="align-middle">{item.nombre}</td>
                                         <td className="align-middle">{item.quantity} x ${item.precio}</td>
-                                        <td className="align-middle text-center">{item.quantity}{item.precio} </td>
+                                        <td className="align-middle text-center">${item.quantity * item.precio} </td>
                                     </tr>
                                 )
                             }

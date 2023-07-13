@@ -13,21 +13,21 @@ const ItemDetail = ({producto}) => {
 
   //corrección coder ask
     useEffect (() => {
-        setItem(producto);
-    }, [producto]); 
+            setItem(producto);
+        }, [producto]); 
 
 
     return (
-        <div className="container">
+        <div className="container my-5">
             <div className="row">
-                <div className="col-md-5 offet md-1">
-                    <img src={producto.imagen} alt={producto.nombre} className="img-fluid" />
+                <div className="col-md-5 offet-md-1">
+                    <img src={item.imagen} alt={item.nombre} className="img-fluid" />
                 </div>
                 <div className="col-md-3">
-                    <h1>{producto.nombre}</h1>
-                    <h3>{producto.descripcion}</h3>
-                    <p><b>${producto.precio}</b></p>
-                    <ItemCount stock={producto.stock} onAdd={onAdd} />
+                    <h1>{item.nombre}</h1>
+                    <h3>{item.descripcion}</h3>
+                    <p><b>${item.precio}</b></p>
+                    <ItemCount stock={item.stock} onAdd={onAdd} />
 
                 </div>
             </div>

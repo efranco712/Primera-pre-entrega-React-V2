@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const ItemCount = ({stock, onAdd}) => {
-    const[items,setItems] =useState(0);
+    const[items,setItems] =useState(1);
     const[itemStock,setItemStock] = useState(stock);
     const[itemAdded, setItemAdded] = useState(false);
     console.log(items);
@@ -16,7 +16,7 @@ const ItemCount = ({stock, onAdd}) => {
     }
 
     const decrementarStock = () => {
-        if (items > itemStock) {
+        if (items > 1) {
             setItems(items - 1);
         }
     }
@@ -32,25 +32,25 @@ const ItemCount = ({stock, onAdd}) => {
         }
     }  
 
-useEffect(() => {
-        setItemStock(stock); 
+    useEffect(() => {
+            setItemStock(stock); 
 
-    }, [stock]);
+        }, [stock]); 
 
     return (
         <div className="container">
             <div className="row">
                 <div className="col">
                     <div className="btn-grupo" role="group" aria-label="Basic example">
-                        <button type="button" className="btn btn-ligh" onClick={decrementarStock} >-</button>
+                        <button type="button" className="btn btn-light" onClick={decrementarStock}>-</button>
                         <button type="button" className="btn btn-light">{items}</button>
-                        <button type="button" className="btn btn-light"onClick={addToCart}>+</button>
+                        <button type="button" className="btn btn-light"onClick={incremetarStock}>+</button>
                     </div>
                 </div>
             </div>
             <div className="row">
                 <div className="col">
-                {itemAdded ? <Link to={"/cart"} className="btn btn-light">Finalizar Compra </Link> : <button type="button" className="btn btn-light" onClick={()=> onAdd(items)}>Agregar al carrito</button>}
+                {itemAdded ? <Link to={"/cart"} className="btn btn-light">Finalizar Compra </Link> : <button type="button" className="btn btn-light" onClick={addToCart}>Agregar al carrito</button>}
                 </div>
             </div>
         </div>    
