@@ -8,7 +8,7 @@ const CartContextProvider = ({children}) => {
 
     const addItem = (item, quantity) => {
         if (isInCart(item.id)) {
-            let pos = cart.findIndex(product => item.id ===     item.id);
+            let pos = cart.findIndex(product => product.id === item.id);
             cart[pos].quantity += quantity;
             setCart([...cart]);
         } else {

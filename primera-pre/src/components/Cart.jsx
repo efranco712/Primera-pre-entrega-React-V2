@@ -29,7 +29,7 @@ const Cart = () => {
             
             <div className="row">
                 <div className="col">
-                    <table className="table table-bordered">
+                    <table className="table">
                         <tbody>
                             <tr>
                                 <td colSpan={4}>&nbsp;</td>
