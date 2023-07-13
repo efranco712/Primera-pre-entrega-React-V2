@@ -3,6 +3,7 @@ import { CartContext } from "./context/CartContext";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { Navigate} from "react-router-dom";
 
+
 const Checkout = () => {
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ const Checkout = () => {
         }
 
         const buyer = { name: nombre, phone: telefono, email: email }
-        const items = cart.map(item => ({ Id: item.id, title: item.title, price: item.price, quantity:item.quantity}));
+        const items = cart.map(item => ({ Id: item.id, name: item.name, price: item.price, quantity:item.quantity}));
         const fecha = new Date();
         const date = `${fecha.getFullYear()}-${fecha.getMonth() + 1}- ${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}}`;
         const total = sumTotal();
@@ -72,8 +73,8 @@ const Checkout = () => {
                                     <tr>
                                         <td><img src={item.imagen} alt={item.nombre} width={80} /></td>
                                         <td className="align-middle">{item.nombre}</td>
-                                        <td className="align-middle">{item.quantity} x ${item.precio * item.precio}</td>
-                                        <td className="align-middle text-center">{item.quantity * item.precio}</td>
+                                        <td className="align-middle">{item.quantity} x ${item.precio}</td>
+                                        <td className="align-middle text-center">{item.quantity}{item.precio} </td>
                                     </tr>
                                 )
                             }

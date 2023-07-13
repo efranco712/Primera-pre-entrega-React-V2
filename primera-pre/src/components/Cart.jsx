@@ -40,10 +40,10 @@ const Cart = () => {
                                 {
                                     cart.map(item => 
                                         <tr>
-                                            <td><img src={item.imagen} alt={item.titulo} width={80} /></td>
-                                            <td className="align-middle">{item.titulo}</td>
-                                            <td className="align-middle">{item.cantidad} x ${item.precio * item.precio}</td>
-                                            <td className="align-middle text-center">{item.cantidad * item.precio}</td>
+                                            <td><img src={item.imagen} alt={item.nombre} width={80} /></td>
+                                            <td className="align-middle">{item.nombre}</td>
+                                            <td className="align-middle">{item.quantity} x ${item.precio}</td>
+                                            <td className="align-middle text-center">{item.quantity * item.precio}</td>
                                             <td className="align-middle text-end"><button className="bttn btn-light" onClick={() => {removeItem(item.id)}}
                                             title="Eliminar producto"><img src={trash} alt="Eliminr Producto" width={24} />
                                             </button></td>

@@ -2,10 +2,12 @@ import { useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 
 
+
 const ItemCount = ({stock, onAdd}) => {
     const[items,setItems] =useState(0);
     const[itemStock,setItemStock] = useState(stock);
     const[itemAdded, setItemAdded] = useState(false);
+    console.log(items);
     
     const incremetarStock = () => {
         if (items < itemStock) {
@@ -40,7 +42,7 @@ useEffect(() => {
             <div className="row">
                 <div className="col">
                     <div className="btn-grupo" role="group" aria-label="Basic example">
-                        <button type="button" className="btn btn-ligh" onClick={decrementarStock}>-</button>
+                        <button type="button" className="btn btn-ligh" onClick={decrementarStock} >-</button>
                         <button type="button" className="btn btn-light">{items}</button>
                         <button type="button" className="btn btn-light"onClick={addToCart}>+</button>
                     </div>
@@ -53,7 +55,7 @@ useEffect(() => {
             </div>
         </div>    
         
-    )
+    ) 
 }
 
 export default ItemCount;
